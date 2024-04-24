@@ -3,6 +3,7 @@ import Home from "./components/Home.jsx";
 import Art from "./components/Art.jsx";
 import ShoppingCart from "./components/ShoppingCart.jsx";
 import Contact from "./components/Contact.jsx";
+import Footer from "./components/Footer/index.jsx";
 import { Routes, Route } from "react-router-dom";
 
 const App = () => {
@@ -17,6 +18,7 @@ const App = () => {
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </div>
+      <Footer />
     </>
   );
 };
