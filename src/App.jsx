@@ -9,7 +9,7 @@ const App = () => {
   return (
     <>
       <NavBar />
-      <div className="w-full h-screen flex justify-center items-center">
+      <div className="w-full min-h-screen flex flex-col justify-center items-center">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/art" element={<Art />} />
