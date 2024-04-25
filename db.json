@@ -6,10 +6,12 @@
       "artist": "John Doe",
       "year": 2020,
       "medium": "print",
-      "dimensions": "50x50",
+      "width": "160",
+      "height": "90",
       "unit": "inches",
       "price": 100,
-      "currency": "USD"
+      "currency": "USD",
+      "ImageUrl": ""
     },
     {
       "id": 2,
@@ -17,10 +19,12 @@
       "artist": "Jane Smith",
       "year": 2021,
       "medium": "print",
-      "dimensions": "40x30",
+      "width": "40",
+      "height": "40",
       "unit": "inches",
       "price": 150,
-      "currency": "USD"
+      "currency": "USD",
+      "ImageUrl": ""
     },
     {
       "id": 3,
@@ -28,10 +32,12 @@
       "artist": "Emily Stone",
       "year": 2021,
       "medium": "print",
-      "dimensions": "45x35",
+      "width": "40",
+      "height": "40",
       "unit": "inches",
       "price": 200,
-      "currency": "USD"
+      "currency": "USD",
+      "ImageUrl": ""
     },
     {
       "id": 4,
@@ -39,10 +45,12 @@
       "artist": "Michael Brown",
       "year": 2022,
       "medium": "print",
-      "dimensions": "50x40",
+      "width": "40",
+      "height": "40",
       "unit": "inches",
       "price": 175,
-      "currency": "USD"
+      "currency": "USD",
+      "ImageUrl": ""
     },
     {
       "id": 5,
@@ -50,10 +58,12 @@
       "artist": "Laura Green",
       "year": 2023,
       "medium": "print",
-      "dimensions": "60x40",
+      "width": "40",
+      "height": "40",
       "unit": "inches",
       "price": 220,
-      "currency": "USD"
+      "currency": "USD",
+      "ImageUrl": ""
     },
     {
       "id": 6,
@@ -61,10 +71,12 @@
       "artist": "Robert Frost",
       "year": 2023,
       "medium": "print",
-      "dimensions": "30x45",
+      "width": "160",
+      "height": "90",
       "unit": "inches",
       "price": 180,
-      "currency": "USD"
+      "currency": "USD",
+      "ImageUrl": ""
     },
     {
       "id": 7,
@@ -72,10 +84,12 @@
       "artist": "Alice Blue",
       "year": 2022,
       "medium": "print",
-      "dimensions": "55x45",
+      "width": "55",
+      "height": "45",
       "unit": "inches",
       "price": 250,
-      "currency": "USD"
+      "currency": "USD",
+      "ImageUrl": ""
     },
     {
       "id": 8,
@@ -83,10 +97,12 @@
       "artist": "Daniel Grey",
       "year": 2023,
       "medium": "print",
-      "dimensions": "40x30",
+      "width": "40",
+      "height": "30",
       "unit": "inches",
       "price": 140,
-      "currency": "USD"
+      "currency": "USD",
+      "ImageUrl": ""
     },
     {
       "id": 9,
@@ -94,10 +110,12 @@
       "artist": "Chloe Sun",
       "year": 2022,
       "medium": "print",
-      "dimensions": "45x35",
+      "width": "45",
+      "height": "35",
       "unit": "inches",
       "price": 190,
-      "currency": "USD"
+      "currency": "USD",
+      "ImageUrl": ""
     },
     {
       "id": 10,
@@ -105,10 +123,12 @@
       "artist": "Benjamin Park",
       "year": 2021,
       "medium": "print",
-      "dimensions": "60x50",
+      "width": "60",
+      "height": "50",
       "unit": "inches",
       "price": 300,
-      "currency": "USD"
+      "currency": "USD",
+      "ImageUrl": ""
     },
     {
       "id": 11,
@@ -116,10 +136,12 @@
       "artist": "Sophia Moon",
       "year": 2020,
       "medium": "print",
-      "dimensions": "40x40",
+      "width": "40",
+      "height": "40",
       "unit": "inches",
       "price": 180,
-      "currency": "USD"
+      "currency": "USD",
+      "ImageUrl": ""
     },
     {
       "id": 12,
@@ -127,10 +149,12 @@
       "artist": "Lucas Flint",
       "year": 2023,
       "medium": "print",
-      "dimensions": "50x30",
+      "width": "50",
+      "height": "30",
       "unit": "inches",
       "price": 210,
-      "currency": "USD"
+      "currency": "USD",
+      "ImageUrl": ""
     },
     {
       "id": 13,
@@ -138,10 +162,12 @@
       "artist": "Nora Field",
       "year": 2022,
       "medium": "print",
-      "dimensions": "45x45",
+      "width": "45",
+      "height": "45",
       "unit": "inches",
       "price": 160,
-      "currency": "USD"
+      "currency": "USD",
+      "ImageUrl": ""
     },
     {
       "id": 14,
@@ -149,10 +175,12 @@
       "artist": "Henry Oak",
       "year": 2021,
       "medium": "print",
-      "dimensions": "55x65",
+      "width": "55",
+      "height": "65",
       "unit": "inches",
       "price": 350,
-      "currency": "USD"
+      "currency": "USD",
+      "ImageUrl": ""
     },
     {
       "id": 15,
@@ -160,10 +188,12 @@
       "artist": "Ivy Wilde",
       "year": 2022,
       "medium": "print",
-      "dimensions": "48x36",
+      "width": "48",
+      "height": "36",
       "unit": "inches",
       "price": 230,
-      "currency": "USD"
+      "currency": "USD",
+      "ImageUrl": ""
     },
     {
       "id": 16,
@@ -171,10 +201,12 @@
       "artist": "Leo Storm",
       "year": 2023,
       "medium": "print",
-      "dimensions": "60x45",
+      "width": "60",
+      "height": "45",
       "unit": "inches",
       "price": 190,
-      "currency": "USD"
+      "currency": "USD",
+      "ImageUrl": ""
     },
     {
       "id": 17,
@@ -182,10 +214,12 @@
       "artist": "Sarah Mist",
       "year": 2021,
       "medium": "print",
-      "dimensions": "30x50",
+      "width": "30",
+      "height": "50",
       "unit": "inches",
       "price": 210,
-      "currency": "USD"
+      "currency": "USD",
+      "ImageUrl": ""
     },
     {
       "id": 18,
@@ -193,10 +227,12 @@
       "artist": "George Wind",
       "year": 2020,
       "medium": "print",
-      "dimensions": "45x30",
+      "width": "45",
+      "height": "30",
       "unit": "inches",
       "price": 175,
-      "currency": "USD"
+      "currency": "USD",
+      "ImageUrl": ""
     },
     {
       "id": 19,
@@ -204,10 +240,12 @@
       "artist": "Claire Shadows",
       "year": 2023,
       "medium": "print",
-      "dimensions": "50x60",
+      "width": "50",
+      "height": "60",
       "unit": "inches",
       "price": 250,
-      "currency": "USD"
+      "currency": "USD",
+      "ImageUrl": ""
     },
     {
       "id": 20,
@@ -215,10 +253,25 @@
       "artist": "James Night",
       "year": 2021,
       "medium": "print",
-      "dimensions": "40x50",
+      "width": "40",
+      "height": "50",
       "unit": "inches",
       "price": 220,
-      "currency": "USD"
+      "currency": "USD",
+      "ImageUrl": ""
+    },
+    {
+      "id": 21,
+      "title": "Labyrinth of Dreams",
+      "artist": "Emma Cloud",
+      "year": 2022,
+      "medium": "print",
+      "width": "55",
+      "height": "45",
+      "unit": "inches",
+      "price": 240,
+      "currency": "USD",
+      "ImageUrl": ""
     }
   ]
 }

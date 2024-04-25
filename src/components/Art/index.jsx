@@ -1,5 +1,6 @@
 import Hero from "../Hero";
 import dataService from "../../services/dataService";
+import ArtGrid from "./ArtGrid";
 import { useState, useEffect } from "react";
 
 const Art = () => {
@@ -16,11 +17,7 @@ const Art = () => {
   if (!art) {
     content = <div>Loading...</div>;
   } else {
-    content = art.map((artPiece) => (
-      <div key={artPiece.id} className="flex flex-col items-center">
-        <h3>{artPiece.title}</h3>
-      </div>
-    ));
+    content = <ArtGrid art={art} />;
   }
 
   return (
