@@ -1,0 +1,224 @@
+{
+  "art": [
+    {
+      "id": 1,
+      "title": "The howling werewolf",
+      "artist": "John Doe",
+      "year": 2020,
+      "medium": "print",
+      "dimensions": "50x50",
+      "unit": "inches",
+      "price": 100,
+      "currency": "USD"
+    },
+    {
+      "id": 2,
+      "title": "Enchanted Forest Twilight",
+      "artist": "Jane Smith",
+      "year": 2021,
+      "medium": "print",
+      "dimensions": "40x30",
+      "unit": "inches",
+      "price": 150,
+      "currency": "USD"
+    },
+    {
+      "id": 3,
+      "title": "Dragon's Lair Sunrise",
+      "artist": "Emily Stone",
+      "year": 2021,
+      "medium": "print",
+      "dimensions": "45x35",
+      "unit": "inches",
+      "price": 200,
+      "currency": "USD"
+    },
+    {
+      "id": 4,
+      "title": "Mystic Mountain",
+      "artist": "Michael Brown",
+      "year": 2022,
+      "medium": "print",
+      "dimensions": "50x40",
+      "unit": "inches",
+      "price": 175,
+      "currency": "USD"
+    },
+    {
+      "id": 5,
+      "title": "Castle in the Clouds",
+      "artist": "Laura Green",
+      "year": 2023,
+      "medium": "print",
+      "dimensions": "60x40",
+      "unit": "inches",
+      "price": 220,
+      "currency": "USD"
+    },
+    {
+      "id": 6,
+      "title": "Glimmering Elven Waterfall",
+      "artist": "Robert Frost",
+      "year": 2023,
+      "medium": "print",
+      "dimensions": "30x45",
+      "unit": "inches",
+      "price": 180,
+      "currency": "USD"
+    },
+    {
+      "id": 7,
+      "title": "Sorcerer’s Duel",
+      "artist": "Alice Blue",
+      "year": 2022,
+      "medium": "print",
+      "dimensions": "55x45",
+      "unit": "inches",
+      "price": 250,
+      "currency": "USD"
+    },
+    {
+      "id": 8,
+      "title": "Phoenix Rebirth",
+      "artist": "Daniel Grey",
+      "year": 2023,
+      "medium": "print",
+      "dimensions": "40x30",
+      "unit": "inches",
+      "price": 140,
+      "currency": "USD"
+    },
+    {
+      "id": 9,
+      "title": "Mermaid’s Lagoon at Dusk",
+      "artist": "Chloe Sun",
+      "year": 2022,
+      "medium": "print",
+      "dimensions": "45x35",
+      "unit": "inches",
+      "price": 190,
+      "currency": "USD"
+    },
+    {
+      "id": 10,
+      "title": "Orc Warlord's March",
+      "artist": "Benjamin Park",
+      "year": 2021,
+      "medium": "print",
+      "dimensions": "60x50",
+      "unit": "inches",
+      "price": 300,
+      "currency": "USD"
+    },
+    {
+      "id": 11,
+      "title": "Crystal Cave Wonder",
+      "artist": "Sophia Moon",
+      "year": 2020,
+      "medium": "print",
+      "dimensions": "40x40",
+      "unit": "inches",
+      "price": 180,
+      "currency": "USD"
+    },
+    {
+      "id": 12,
+      "title": "Goblin Market Gathering",
+      "artist": "Lucas Flint",
+      "year": 2023,
+      "medium": "print",
+      "dimensions": "50x30",
+      "unit": "inches",
+      "price": 210,
+      "currency": "USD"
+    },
+    {
+      "id": 13,
+      "title": "Witches' Sabbath Night",
+      "artist": "Nora Field",
+      "year": 2022,
+      "medium": "print",
+      "dimensions": "45x45",
+      "unit": "inches",
+      "price": 160,
+      "currency": "USD"
+    },
+    {
+      "id": 14,
+      "title": "Guardian of the Ancient Forest",
+      "artist": "Henry Oak",
+      "year": 2021,
+      "medium": "print",
+      "dimensions": "55x65",
+      "unit": "inches",
+      "price": 350,
+      "currency": "USD"
+    },
+    {
+      "id": 15,
+      "title": "Celestial Navigation",
+      "artist": "Ivy Wilde",
+      "year": 2022,
+      "medium": "print",
+      "dimensions": "48x36",
+      "unit": "inches",
+      "price": 230,
+      "currency": "USD"
+    },
+    {
+      "id": 16,
+      "title": "Fairy Ring Ritual",
+      "artist": "Leo Storm",
+      "year": 2023,
+      "medium": "print",
+      "dimensions": "60x45",
+      "unit": "inches",
+      "price": 190,
+      "currency": "USD"
+    },
+    {
+      "id": 17,
+      "title": "Veil of the Nymphs",
+      "artist": "Sarah Mist",
+      "year": 2021,
+      "medium": "print",
+      "dimensions": "30x50",
+      "unit": "inches",
+      "price": 210,
+      "currency": "USD"
+    },
+    {
+      "id": 18,
+      "title": "Twilight Serenade of the Elves",
+      "artist": "George Wind",
+      "year": 2020,
+      "medium": "print",
+      "dimensions": "45x30",
+      "unit": "inches",
+      "price": 175,
+      "currency": "USD"
+    },
+    {
+      "id": 19,
+      "title": "Echoes of the Forgotten Kingdom",
+      "artist": "Claire Shadows",
+      "year": 2023,
+      "medium": "print",
+      "dimensions": "50x60",
+      "unit": "inches",
+      "price": 250,
+      "currency": "USD"
+    },
+    {
+      "id": 20,
+      "title": "Portal of the Ancient Gods",
+      "artist": "James Night",
+      "year": 2021,
+      "medium": "print",
+      "dimensions": "40x50",
+      "unit": "inches",
+      "price": 220,
+      "currency": "USD"
+    }
+  ]
+}
