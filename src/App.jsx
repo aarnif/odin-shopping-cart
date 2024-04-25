@@ -1,6 +1,6 @@
 import NavBar from "./components/NavBar/index.jsx";
 import Home from "./components/Home.jsx";
-import Art from "./components/Art.jsx";
+import Art from "./components/Art/index.jsx";
 import ShoppingCart from "./components/ShoppingCart.jsx";
 import Contact from "./components/Contact.jsx";
 import Footer from "./components/Footer/index.jsx";
