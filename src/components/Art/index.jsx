@@ -14,7 +14,7 @@ const Art = () => {
     });
   }, []);
 
-  if (!art) {
+  if (!art.length) {
     content = <div>Loading...</div>;
   } else {
     content = <ArtGrid art={art} />;

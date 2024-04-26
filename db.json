@@ -1,7 +1,7 @@
 {
   "art": [
     {
-      "id": 1,
+      "id": 0,
       "title": "The howling werewolf",
       "artist": "John Doe",
       "year": 2020,
@@ -11,10 +11,11 @@
       "unit": "inches",
       "price": 100,
       "currency": "USD",
-      "ImageUrl": ""
+      "ImageUrl": "",
+      "description": "A vivid depiction of a werewolf mid-howl under a moonlit sky, evoking a sense of primal ferocity and mythical allure."
     },
     {
-      "id": 2,
+      "id": 1,
       "title": "Enchanted Forest Twilight",
       "artist": "Jane Smith",
       "year": 2021,
@@ -24,10 +25,11 @@
       "unit": "inches",
       "price": 150,
       "currency": "USD",
-      "ImageUrl": ""
+      "ImageUrl": "",
+      "description": "An ethereal landscape showing a forest at twilight, with light filtering through dense trees creating a magical atmosphere."
     },
     {
-      "id": 3,
+      "id": 2,
       "title": "Dragon's Lair Sunrise",
       "artist": "Emily Stone",
       "year": 2021,
@@ -37,10 +39,11 @@
       "unit": "inches",
       "price": 200,
       "currency": "USD",
-      "ImageUrl": ""
+      "ImageUrl": "",
+      "description": "Captures the first rays of sunrise illuminating a secretive dragon's lair, hinting at danger and treasure within."
     },
     {
-      "id": 4,
+      "id": 3,
       "title": "Mystic Mountain",
       "artist": "Michael Brown",
       "year": 2022,
@@ -50,10 +53,11 @@
       "unit": "inches",
       "price": 175,
       "currency": "USD",
-      "ImageUrl": ""
+      "ImageUrl": "",
+      "description": "A serene and mysterious mountain scene bathed in soft light, suggesting hidden secrets and ancient stories."
     },
     {
-      "id": 5,
+      "id": 4,
       "title": "Castle in the Clouds",
       "artist": "Laura Green",
       "year": 2023,
@@ -63,10 +67,11 @@
       "unit": "inches",
       "price": 220,
       "currency": "USD",
-      "ImageUrl": ""
+      "ImageUrl": "",
+      "description": "An imaginative portrayal of a fantastical castle floating among lofty clouds, symbolizing dreams and fairy tales."
     },
     {
-      "id": 6,
+      "id": 5,
       "title": "Glimmering Elven Waterfall",
       "artist": "Robert Frost",
       "year": 2023,
@@ -76,11 +81,12 @@
       "unit": "inches",
       "price": 180,
       "currency": "USD",
-      "ImageUrl": ""
+      "ImageUrl": "",
+      "description": "Features a shimmering waterfall in an elven realm, with light playing on the water to create a mesmerizing effect."
     },
     {
-      "id": 7,
-      "title": "Sorcerer’s Duel",
+      "id": 6,
+      "title": "Sorcerer\u2019s Duel",
       "artist": "Alice Blue",
       "year": 2022,
       "medium": "print",
@@ -89,10 +95,11 @@
       "unit": "inches",
       "price": 250,
       "currency": "USD",
-      "ImageUrl": ""
+      "ImageUrl": "",
+      "description": "An intense scene of two sorcerers locked in a magical duel, with dynamic energy and vivid colors highlighting the battle."
     },
     {
-      "id": 8,
+      "id": 7,
       "title": "Phoenix Rebirth",
       "artist": "Daniel Grey",
       "year": 2023,
@@ -102,11 +109,12 @@
       "unit": "inches",
       "price": 140,
       "currency": "USD",
-      "ImageUrl": ""
+      "ImageUrl": "",
+      "description": "Illustrates the fiery rebirth of a phoenix, surrounded by flames that signify transformation and renewal."
     },
     {
-      "id": 9,
-      "title": "Mermaid’s Lagoon at Dusk",
+      "id": 8,
+      "title": "Mermaid\u2019s Lagoon at Dusk",
       "artist": "Chloe Sun",
       "year": 2022,
       "medium": "print",
@@ -115,10 +123,11 @@
       "unit": "inches",
       "price": 190,
       "currency": "USD",
-      "ImageUrl": ""
+      "ImageUrl": "",
+      "description": "Shows a peaceful lagoon at dusk where a mermaid is subtly visible, blending mystique with the beauty of the underwater world."
     },
     {
-      "id": 10,
+      "id": 9,
       "title": "Orc Warlord's March",
       "artist": "Benjamin Park",
       "year": 2021,
@@ -128,10 +137,11 @@
       "unit": "inches",
       "price": 300,
       "currency": "USD",
-      "ImageUrl": ""
+      "ImageUrl": "",
+      "description": "Depicts an orc warlord leading his troops, conveying a sense of impending battle and rugged leadership."
     },
     {
-      "id": 11,
+      "id": 10,
       "title": "Crystal Cave Wonder",
       "artist": "Sophia Moon",
       "year": 2020,
@@ -141,10 +151,11 @@
       "unit": "inches",
       "price": 180,
       "currency": "USD",
-      "ImageUrl": ""
+      "ImageUrl": "",
+      "description": "A sparkling crystal cave filled with radiant gemstones, evoking wonder and a sense of exploration."
     },
     {
-      "id": 12,
+      "id": 11,
       "title": "Goblin Market Gathering",
       "artist": "Lucas Flint",
       "year": 2023,
@@ -154,10 +165,11 @@
       "unit": "inches",
       "price": 210,
       "currency": "USD",
-      "ImageUrl": ""
+      "ImageUrl": "",
+      "description": "A bustling goblin market scene, rich in detail and color, capturing the chaos and charm of goblin commerce."
     },
     {
-      "id": 13,
+      "id": 12,
       "title": "Witches' Sabbath Night",
       "artist": "Nora Field",
       "year": 2022,
@@ -167,10 +179,11 @@
       "unit": "inches",
       "price": 160,
       "currency": "USD",
-      "ImageUrl": ""
+      "ImageUrl": "",
+      "description": "A dark and moody scene of witches gathering at night, filled with mystery and a hint of danger."
     },
     {
-      "id": 14,
+      "id": 13,
       "title": "Guardian of the Ancient Forest",
       "artist": "Henry Oak",
       "year": 2021,
@@ -180,10 +193,11 @@
       "unit": "inches",
       "price": 350,
       "currency": "USD",
-      "ImageUrl": ""
+      "ImageUrl": "",
+      "description": "Portrays a majestic guardian spirit of the forest, standing watch over ancient trees and unseen realms."
     },
     {
-      "id": 15,
+      "id": 14,
       "title": "Celestial Navigation",
       "artist": "Ivy Wilde",
       "year": 2022,
@@ -193,10 +207,11 @@
       "unit": "inches",
       "price": 230,
       "currency": "USD",
-      "ImageUrl": ""
+      "ImageUrl": "",
+      "description": "Features celestial bodies guiding ancient mariners, blending navigation with the mysteries of the stars."
     },
     {
-      "id": 16,
+      "id": 15,
       "title": "Fairy Ring Ritual",
       "artist": "Leo Storm",
       "year": 2023,
@@ -206,10 +221,11 @@
       "unit": "inches",
       "price": 190,
       "currency": "USD",
-      "ImageUrl": ""
+      "ImageUrl": "",
+      "description": "A secretive gathering of fairies in a moonlit forest, performing an enchanting ritual with magical implications."
     },
     {
-      "id": 17,
+      "id": 16,
       "title": "Veil of the Nymphs",
       "artist": "Sarah Mist",
       "year": 2021,
@@ -219,10 +235,11 @@
       "unit": "inches",
       "price": 210,
       "currency": "USD",
-      "ImageUrl": ""
+      "ImageUrl": "",
+      "description": "Captures the delicate beauty of nymphs behind a veil of waterfall mist, combining elements of grace and nature."
     },
     {
-      "id": 18,
+      "id": 17,
       "title": "Twilight Serenade of the Elves",
       "artist": "George Wind",
       "year": 2020,
@@ -232,10 +249,11 @@
       "unit": "inches",
       "price": 175,
       "currency": "USD",
-      "ImageUrl": ""
+      "ImageUrl": "",
+      "description": "An elven serenade at twilight, with music that weaves magic and soothes the forest creatures."
     },
     {
-      "id": 19,
+      "id": 18,
       "title": "Echoes of the Forgotten Kingdom",
       "artist": "Claire Shadows",
       "year": 2023,
@@ -245,10 +263,11 @@
       "unit": "inches",
       "price": 250,
       "currency": "USD",
-      "ImageUrl": ""
+      "ImageUrl": "",
+      "description": "Ruins of a once-mighty kingdom, echoing its past glory and the tales lost to time."
     },
     {
-      "id": 20,
+      "id": 19,
       "title": "Portal of the Ancient Gods",
       "artist": "James Night",
       "year": 2021,
@@ -258,10 +277,11 @@
       "unit": "inches",
       "price": 220,
       "currency": "USD",
-      "ImageUrl": ""
+      "ImageUrl": "",
+      "description": "A mystical portal that is said to connect to the realms of ancient gods, brimming with celestial energy."
     },
     {
-      "id": 21,
+      "id": 20,
       "title": "Labyrinth of Dreams",
       "artist": "Emma Cloud",
       "year": 2022,
@@ -271,7 +291,8 @@
       "unit": "inches",
       "price": 240,
       "currency": "USD",
-      "ImageUrl": ""
+      "ImageUrl": "",
+      "description": "A surreal labyrinth that represents the journey through dreams, filled with symbolic paths and choices."
     }
   ]
 }

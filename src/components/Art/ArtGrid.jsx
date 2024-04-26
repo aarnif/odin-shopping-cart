@@ -1,10 +1,28 @@
+import { useState, useRef } from "react";
 import ArtGridRow from "./ArtGridRow";
+import SingleArtItemView from "./SingleArtItemView";
 
 const ArtGrid = ({ art }) => {
+  const dialogRef = useRef(null);
+  const [artItemIndex, setArtItemIndex] = useState(0);
   const artRows = [];
   const gridRowWidthInPixels = 1600;
   const gridRowHeightInPixels = 400;
   let index = 0;
+
+  const handleMoveToPreviousImage = () => {
+    const newIndexValue =
+      artItemIndex === 0 ? art.length - 1 : artItemIndex - 1;
+    setArtItemIndex(newIndexValue);
+    console.log("Previous image:", art[newIndexValue].title);
+  };
+
+  const handleMoveToNextImage = () => {
+    const newIndexValue =
+      artItemIndex === art.length - 1 ? 0 : artItemIndex + 1;
+    setArtItemIndex(newIndexValue);
+    console.log("Next image:", art[newIndexValue].title);
+  };
 
   while (index < art.length) {
     let artRow = [];
@@ -29,11 +47,24 @@ const ArtGrid = ({ art }) => {
   }
 
   return (
-    <div className="w-full flex-grow flex flex-col justify-center items-center">
-      {artRows.map((row, index) => (
-        <ArtGridRow key={index} art={row} />
-      ))}
-    </div>
+    <>
+      <div className="w-full flex-grow flex flex-col justify-center items-center">
+        {artRows.map((row, index) => (
+          <ArtGridRow
+            ref={dialogRef}
+            key={index}
+            art={row}
+            setArtItemIndex={setArtItemIndex}
+          />
+        ))}
+      </div>
+      <SingleArtItemView
+        ref={dialogRef}
+        art={art[artItemIndex]}
+        handleMoveToPreviousImage={handleMoveToPreviousImage}
+        handleMoveToNextImage={handleMoveToNextImage}
+      />
+    </>
   );
 };
 
