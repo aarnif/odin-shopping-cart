@@ -1,8 +1,9 @@
-import { useState, useRef } from "react";
+import utils from "../../utils";
 import ArtGridRow from "./ArtGridRow";
 import SingleArtItemView from "./SingleArtItemView";
+import { useState, useRef } from "react";
 
-const ArtGrid = ({ art }) => {
+const ArtGrid = ({ art, shoppingCart, setShoppingCart }) => {
   const dialogRef = useRef(null);
   const [artItemIndex, setArtItemIndex] = useState(0);
   const artRows = [];
@@ -29,7 +30,10 @@ const ArtGrid = ({ art }) => {
     let artRowWidth = 0;
 
     while (artRowWidth < gridRowWidthInPixels && index < art.length) {
-      const aspectRatio = art[index].width / art[index].height;
+      const aspectRatio = utils.calculateAspectRatio(
+        art[index].size.small.width,
+        art[index].size.small.height
+      );
       const artWidth = gridRowHeightInPixels * aspectRatio;
 
       art[index].widthInPixels = Math.round(artWidth);
@@ -63,6 +67,8 @@ const ArtGrid = ({ art }) => {
         art={art[artItemIndex]}
         handleMoveToPreviousImage={handleMoveToPreviousImage}
         handleMoveToNextImage={handleMoveToNextImage}
+        shoppingCart={shoppingCart}
+        setShoppingCart={setShoppingCart}
       />
     </>
   );

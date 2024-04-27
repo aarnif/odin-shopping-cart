@@ -1,4 +1,5 @@
 import { forwardRef, useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 
 const SingleArtImageView = ({
   handleMoveToPreviousImage,
@@ -30,97 +31,134 @@ const SingleArtImageView = ({
   );
 };
 
-const SingleArtItemDetails = forwardRef(({ art }, ref) => {
-  const closeDialog = () => {
-    ref.current.close();
-  };
+const SingleArtItemDetails = forwardRef(
+  ({ art, shoppingCart, setShoppingCart }, ref) => {
+    const closeDialog = () => {
+      ref.current.close();
+    };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log("Item added to cart");
-    closeDialog();
-  };
+    const handleSubmit = (event) => {
+      event.preventDefault();
+      console.log("Item added to cart");
+      const chosenSize = event.target.size.value;
+      const quantity = event.target.quantity.value;
 
-  return (
-    <div className="h-full flex-grow basis-1/3 flex flex-col justify-between px-8">
-      <div>
-        <h1 className="text-center">{art.title}</h1>
-        <h2 className="text-center">By {art.artist}</h2>
-      </div>
-      <div>
-        <h3 className="text-center">{art.description}</h3>
-      </div>
-      <div>
-        <h3 className="text-center">
-          All of our prints are individually printed and hand signed by the
-          artist.
-        </h3>
-      </div>
-      <div>
-        <form>
-          <ul>
-            <li>
-              <ul className="flex justify-around items-center">
-                <li>
-                  <label htmlFor="size">Size:</label>
-                </li>
-                <li>
-                  <select name="size" defaultValue={"medium"}>
-                    <option value="small">
-                      Small ({art.width * 0.5} x {art.height * 0.5} inches)
-                    </option>
-                    <option value="medium">
-                      Medium ({art.width} x {art.height} inches)
-                    </option>
-                    <option value="large">
-                      Large ({art.width * 2} x {art.height * 2} inches)
-                    </option>
-                  </select>
-                </li>
-              </ul>
-            </li>
+      const checkIfItemWithSameSizeAndTitleInCart = shoppingCart.find(
+        (item) => item.title === art.title && item.chosenSize === chosenSize
+      );
 
-            <li>
-              <ul className="flex justify-around items-center">
-                <li>
-                  <label htmlFor="quantity">Quantity:</label>
-                </li>
-                <li>
-                  <input
-                    type="number"
-                    id="quantity"
-                    name="quantity"
-                    min="1"
-                    defaultValue={1}
-                  />
-                </li>
-              </ul>
-            </li>
+      if (checkIfItemWithSameSizeAndTitleInCart) {
+        const updatedCart = shoppingCart.map((item) =>
+          item.title === art.title && item.chosenSize === chosenSize
+            ? { ...item, quantity: Number(item.quantity) + Number(quantity) }
+            : item
+        );
+        setShoppingCart(updatedCart);
+      } else {
+        const newItem = {
+          ...art,
+          id: uuidv4(), // Generate a unique id for the item so that removing same item with different sizes works correctly
+          quantity: quantity,
+          chosenSize: chosenSize,
+          size: { [chosenSize]: art.size[chosenSize] },
+        };
 
-            <li>
-              <ul className="flex justify-around items-center">
-                <li>
-                  <button type="button" onClick={closeDialog}>
-                    Cancel
-                  </button>
-                </li>
-                <li>
-                  <button type="submit" onClick={handleSubmit}>
-                    Add to cart
-                  </button>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </form>
+        setShoppingCart((prev) => [...prev, newItem]);
+      }
+      closeDialog();
+    };
+
+    return (
+      <div className="h-full flex-grow basis-1/3 flex flex-col justify-between px-8">
+        <div>
+          <h1 className="text-center">{art.title}</h1>
+          <h2 className="text-center">By {art.artist}</h2>
+        </div>
+        <div>
+          <h3 className="text-center">{art.description}</h3>
+        </div>
+        <div>
+          <h3 className="text-center">
+            All of our prints are individually printed and hand signed by the
+            artist.
+          </h3>
+        </div>
+        <div>
+          <form onSubmit={handleSubmit}>
+            <ul>
+              <li>
+                <ul className="flex justify-around items-center">
+                  <li>
+                    <label htmlFor="size">Size:</label>
+                  </li>
+                  <li>
+                    <select name="size" defaultValue={"medium"}>
+                      <option value="small">
+                        Small ({art.size.small.width} x {art.size.small.height}{" "}
+                        inches)
+                      </option>
+                      <option value="medium">
+                        Medium ({art.size.medium.width} x{" "}
+                        {art.size.medium.height} inches)
+                      </option>
+                      <option value="large">
+                        Large ({art.size.large.width} x {art.size.large.height}{" "}
+                        inches)
+                      </option>
+                    </select>
+                  </li>
+                </ul>
+              </li>
+
+              <li>
+                <ul className="flex justify-around items-center">
+                  <li>
+                    <label htmlFor="quantity">Quantity:</label>
+                  </li>
+                  <li>
+                    <input
+                      type="number"
+                      id="quantity"
+                      name="quantity"
+                      min="1"
+                      defaultValue={1}
+                    />
+                  </li>
+                </ul>
+              </li>
+
+              <li>
+                <ul className="flex justify-around items-center">
+                  <li>
+                    <button type="button" onClick={closeDialog}>
+                      Cancel
+                    </button>
+                  </li>
+                  <li>
+                    <button type="submit">Add to cart</button>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </form>
+        </div>
       </div>
-    </div>
-  );
-});
+    );
+  }
+);
 SingleArtItemDetails.displayName = "SingleArtItemDetails";
 
 const SingleArtItemView = forwardRef(
-  ({ art, handleMoveToPreviousImage, handleMoveToNextImage }, ref) => {
+  (
+    {
+      art,
+      handleMoveToPreviousImage,
+      handleMoveToNextImage,
+      shoppingCart,
+      setShoppingCart,
+    },
+    ref
+  ) => {
     return (
       <dialog id="dialog" ref={ref}>
         <div className="w-full flex justify-between items-center p-12">
@@ -128,7 +166,12 @@ const SingleArtItemView = forwardRef(
             handleMoveToPreviousImage={handleMoveToPreviousImage}
             handleMoveToNextImage={handleMoveToNextImage}
           />
-          <SingleArtItemDetails ref={ref} art={art} />
+          <SingleArtItemDetails
+            ref={ref}
+            art={art}
+            shoppingCart={shoppingCart}
+            setShoppingCart={setShoppingCart}
+          />
         </div>
       </dialog>
     );

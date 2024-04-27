@@ -3,7 +3,7 @@ import dataService from "../../services/dataService";
 import ArtGrid from "./ArtGrid";
 import { useState, useEffect } from "react";
 
-const Art = () => {
+const Art = ({ shoppingCart, setShoppingCart }) => {
   const [art, setArt] = useState([]);
   let content = null;
 
@@ -17,7 +17,13 @@ const Art = () => {
   if (!art.length) {
     content = <div>Loading...</div>;
   } else {
-    content = <ArtGrid art={art} />;
+    content = (
+      <ArtGrid
+        art={art}
+        shoppingCart={shoppingCart}
+        setShoppingCart={setShoppingCart}
+      />
+    );
   }
 
   return (
