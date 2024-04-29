@@ -3,8 +3,13 @@ import ArtGridRow from "./ArtGridRow";
 import SingleArtItemView from "./SingleArtItemView";
 import { useState, useRef } from "react";
 
-const ArtGrid = ({ art, shoppingCart, setShoppingCart }) => {
-  const dialogRef = useRef(null);
+const ArtGrid = ({
+  art,
+  shoppingCart,
+  setShoppingCart,
+  setLatestShoppingCartItem,
+}) => {
+  const singleArtViewRef = useRef(null);
   const [artItemIndex, setArtItemIndex] = useState(0);
   const artRows = [];
   const gridRowWidthInPixels = 1600;
@@ -12,15 +17,19 @@ const ArtGrid = ({ art, shoppingCart, setShoppingCart }) => {
   let index = 0;
 
   const handleMoveToPreviousImage = () => {
+    console.log("Previous image clicked");
     const newIndexValue =
       artItemIndex === 0 ? art.length - 1 : artItemIndex - 1;
+    console.log("New index value:", newIndexValue);
     setArtItemIndex(newIndexValue);
     console.log("Previous image:", art[newIndexValue].title);
   };
 
   const handleMoveToNextImage = () => {
+    console.log("Next image clicked");
     const newIndexValue =
       artItemIndex === art.length - 1 ? 0 : artItemIndex + 1;
+    console.log("New index value:", newIndexValue);
     setArtItemIndex(newIndexValue);
     console.log("Next image:", art[newIndexValue].title);
   };
@@ -55,7 +64,7 @@ const ArtGrid = ({ art, shoppingCart, setShoppingCart }) => {
       <div className="w-full flex-grow flex flex-col justify-center items-center">
         {artRows.map((row, index) => (
           <ArtGridRow
-            ref={dialogRef}
+            ref={singleArtViewRef}
             key={index}
             art={row}
             setArtItemIndex={setArtItemIndex}
@@ -63,12 +72,13 @@ const ArtGrid = ({ art, shoppingCart, setShoppingCart }) => {
         ))}
       </div>
       <SingleArtItemView
-        ref={dialogRef}
+        ref={singleArtViewRef}
         art={art[artItemIndex]}
         handleMoveToPreviousImage={handleMoveToPreviousImage}
         handleMoveToNextImage={handleMoveToNextImage}
         shoppingCart={shoppingCart}
         setShoppingCart={setShoppingCart}
+        setLatestShoppingCartItem={setLatestShoppingCartItem}
       />
     </>
   );

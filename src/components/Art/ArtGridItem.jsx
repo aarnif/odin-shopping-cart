@@ -1,11 +1,11 @@
 import { useState, forwardRef } from "react";
 
-const ArtGridItem = forwardRef(({ artPiece, setArtItemIndex }, ref) => {
+const ArtGridItem = forwardRef(({ artPiece, index, setArtItemIndex }, ref) => {
   // console.log("Art piece width in pixels: ", artPiece.widthInPixels);
   const [hovered, setHovered] = useState(false);
 
   const handleClick = () => {
-    setArtItemIndex(artPiece.id);
+    setArtItemIndex(index);
     ref.current.showModal();
   };
 

@@ -1,5 +1,5 @@
-import utils from "../utils";
-import Hero from "./Hero";
+import utils from "../../utils";
+import Hero from "../Hero";
 import { useState } from "react";
 
 const ShoppingCartHeaderRow = () => {

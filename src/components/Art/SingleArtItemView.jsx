@@ -32,7 +32,7 @@ const SingleArtImageView = ({
 };
 
 const SingleArtItemDetails = forwardRef(
-  ({ art, shoppingCart, setShoppingCart }, ref) => {
+  ({ art, shoppingCart, setShoppingCart, setLatestShoppingCartItem }, ref) => {
     const closeDialog = () => {
       ref.current.close();
     };
@@ -42,6 +42,16 @@ const SingleArtItemDetails = forwardRef(
       console.log("Item added to cart");
       const chosenSize = event.target.size.value;
       const quantity = event.target.quantity.value;
+
+      const newItem = {
+        ...art,
+        id: uuidv4(), // Generate a unique id for the item so that removing same item with different sizes works correctly
+        quantity: quantity,
+        chosenSize: chosenSize,
+        size: { [chosenSize]: art.size[chosenSize] },
+      };
+
+      setLatestShoppingCartItem(newItem);
 
       const checkIfItemWithSameSizeAndTitleInCart = shoppingCart.find(
         (item) => item.title === art.title && item.chosenSize === chosenSize
@@ -55,14 +65,6 @@ const SingleArtItemDetails = forwardRef(
         );
         setShoppingCart(updatedCart);
       } else {
-        const newItem = {
-          ...art,
-          id: uuidv4(), // Generate a unique id for the item so that removing same item with different sizes works correctly
-          quantity: quantity,
-          chosenSize: chosenSize,
-          size: { [chosenSize]: art.size[chosenSize] },
-        };
-
         setShoppingCart((prev) => [...prev, newItem]);
       }
       closeDialog();
@@ -156,6 +158,7 @@ const SingleArtItemView = forwardRef(
       handleMoveToNextImage,
       shoppingCart,
       setShoppingCart,
+      setLatestShoppingCartItem,
     },
     ref
   ) => {
@@ -171,6 +174,7 @@ const SingleArtItemView = forwardRef(
             art={art}
             shoppingCart={shoppingCart}
             setShoppingCart={setShoppingCart}
+            setLatestShoppingCartItem={setLatestShoppingCartItem}
           />
         </div>
       </dialog>

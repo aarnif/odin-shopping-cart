@@ -1,6 +1,13 @@
 import LinkItem from "./LinkItem";
 
-const NavBar = () => {
+const NavBar = ({ shoppingCart }) => {
+  const shoppingCartItemCount = shoppingCart.reduce(
+    (sum, item) => sum + Number(item.quantity),
+    0
+  );
+
+  console.log("Shopping cart item count:", shoppingCartItemCount);
+
   return (
     <header className="w-full py-4 px-12 flex justify-center items-center">
       <nav className="flex-grow flex justify-between items-center">
@@ -9,7 +16,11 @@ const NavBar = () => {
           <LinkItem to={"/"} itemName={"Home"} />
           <LinkItem to={"/art"} itemName={"Art"} />
           <LinkItem to={"/contact"} itemName={"Contact"} />
-          <LinkItem to={"/shopping_cart"} itemName={"Shopping Cart"} />
+          <LinkItem
+            to={"/shopping_cart"}
+            itemName={"Shopping Cart"}
+            shoppingCartItemCount={shoppingCartItemCount}
+          />
         </ul>
       </nav>
     </header>
