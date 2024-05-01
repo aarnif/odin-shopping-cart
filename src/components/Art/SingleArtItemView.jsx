@@ -163,7 +163,7 @@ const SingleArtItemView = forwardRef(
     ref
   ) => {
     return (
-      <dialog id="dialog" ref={ref}>
+      <dialog id="single-art-item-modal" ref={ref}>
         <div className="w-full flex justify-between items-center p-12">
           <SingleArtImageView
             handleMoveToPreviousImage={handleMoveToPreviousImage}

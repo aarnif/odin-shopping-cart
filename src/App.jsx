@@ -2,7 +2,7 @@ import NavBar from "./components/NavBar/index.jsx";
 import Home from "./components/Home.jsx";
 import Art from "./components/Art/index.jsx";
 import ShoppingCart from "./components/ShoppingCart/index.jsx";
-import Contact from "./components/Contact.jsx";
+import Contact from "./components/Contact/index.jsx";
 import Footer from "./components/Footer/index.jsx";
 import LatestShoppingCartItemView from "./components/ShoppingCart/LatestShoppingCartItemView.jsx";
 import { useState, useEffect } from "react";

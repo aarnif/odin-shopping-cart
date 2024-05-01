@@ -6,10 +6,13 @@
   body {
     @apply m-0 box-border;
   }
-  dialog[open] {
-    @apply w-[90vw] h-[80vh] flex justify-center;
-  }
   dialog::backdrop {
     @apply bg-black bg-opacity-70;
+  }
+  #single-art-item-modal[open] {
+    @apply w-[90vw] h-[80vh] flex justify-center;
+  }
+  #form-submit-modal[open] {
+    @apply w-[400px] h-[200px] flex flex-col items-center justify-center;
   }
 }
