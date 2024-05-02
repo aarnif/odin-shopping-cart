@@ -1,6 +1,6 @@
 import LinkItem from "./LinkItem";
 
-const NavBar = ({ shoppingCart }) => {
+const Header = ({ shoppingCart }) => {
   const shoppingCartItemCount = shoppingCart.reduce(
     (sum, item) => sum + Number(item.quantity),
     0
@@ -27,4 +27,4 @@ const NavBar = ({ shoppingCart }) => {
   );
 };
 
-export default NavBar;
+export default Header;

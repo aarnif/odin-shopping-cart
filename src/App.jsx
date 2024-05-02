@@ -1,4 +1,4 @@
-import NavBar from "./components/NavBar/index.jsx";
+import Header from "./components/Header/index.jsx";
 import Home from "./components/Home.jsx";
 import Art from "./components/Art/index.jsx";
 import ShoppingCart from "./components/ShoppingCart/index.jsx";
@@ -24,7 +24,7 @@ const App = () => {
   console.log("Shopping cart:", shoppingCart);
   return (
     <>
-      <NavBar shoppingCart={shoppingCart} />
+      <Header shoppingCart={shoppingCart} />
       <div className="w-full min-h-screen flex flex-col justify-center items-center">
         <Routes>
           <Route path="/" element={<Home />} />
