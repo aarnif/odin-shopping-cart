@@ -1,12 +1,11 @@
 import { Link } from "react-router-dom";
 
-const LinkItem = ({ to, itemName, shoppingCartItemCount }) => {
+const LinkItem = ({ to, itemName }) => {
   return (
     <li>
-      <Link to={to}>{itemName}</Link>
-      {shoppingCartItemCount > 0 && (
-        <span className="ml-2">{shoppingCartItemCount}</span>
-      )}
+      <Link to={to} className="hover:underline">
+        {itemName}
+      </Link>
     </li>
   );
 };

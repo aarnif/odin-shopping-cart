@@ -1,11 +1,12 @@
 import LinkItem from "./LinkItem";
+import ShoppingCartItem from "./ShoppingCartItem";
 import { useScroll, useMotionValueEvent, motion } from "framer-motion";
 import { useState } from "react";
 
 const Header = ({ shoppingCart }) => {
   const { scrollY, scrollYProgress } = useScroll();
   const [showHeader, setShowHeader] = useState(0);
-  const headerHeightInPixels = 60;
+  const headerHeightInPixels = 80;
   const headerBuffer = 5;
 
   useMotionValueEvent(scrollY, "change", () => {
@@ -17,7 +18,7 @@ const Header = ({ shoppingCart }) => {
       console.log("Page at near top");
       setShowHeader(0);
     } else if (scrollYProgress.current.toFixed(2) >= 0.95) {
-      console.log("Page at bottom");
+      console.log("Page at near bottom");
       setShowHeader(-headerHeightInPixels);
     } else if (
       scrollY.current > scrollY.prev &&
@@ -40,23 +41,21 @@ const Header = ({ shoppingCart }) => {
 
   return (
     <motion.header
-      className="fixed w-full flex justify-center items-center bg-slate-300"
+      className="fixed w-full flex justify-center items-center shadow-lg z-10 bg-white"
       style={{
         height: headerHeightInPixels,
         translateY: showHeader,
       }}
     >
       <nav className="flex-grow flex justify-between items-center">
-        <h1 className="flex-grow text-xl text-center">Art Store</h1>
-        <ul className="max-w-[600px] flex-grow flex justify-around items-center">
+        <h1 className="flex-grow text-center font-title text-4xl">
+          FANTASY ART
+        </h1>
+        <ul className="max-w-[1000px] flex-grow flex justify-around items-center text-xl font-nav font-extrabold">
           <LinkItem to={"/"} itemName={"Home"} />
           <LinkItem to={"/art"} itemName={"Art"} />
           <LinkItem to={"/contact"} itemName={"Contact"} />
-          <LinkItem
-            to={"/shopping_cart"}
-            itemName={"Shopping Cart"}
-            shoppingCartItemCount={shoppingCartItemCount}
-          />
+          <ShoppingCartItem shoppingCartItemCount={shoppingCartItemCount} />
         </ul>
       </nav>
     </motion.header>
