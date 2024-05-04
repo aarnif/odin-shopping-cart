@@ -18,9 +18,13 @@ const ShoppingCartItem = ({ shoppingCartItemCount }) => {
       </Link>
       <Link to={"/shopping_cart"}>
         {shoppingCartItemCount > 0 && (
-          <div className="z-20 relative top-[20px] right-[20px] w-[24px] h-[24px] flex justify-center items-center bg-green-300 rounded-full ml-2 text-lg font-body">
+          <motion.div
+            key={shoppingCartItemCount}
+            animate={{ scale: [1, 1.3, 1], duration: 0.1 }}
+            className="z-20 relative top-[20px] right-[20px] w-[24px] h-[24px] ml-2 flex justify-center items-center bg-green-300 rounded-full shadow-xl text-lg font-body font-semibold"
+          >
             {shoppingCartItemCount}
-          </div>
+          </motion.div>
         )}
       </Link>
     </li>
