@@ -1,6 +1,6 @@
 const OpeningHours = () => {
   return (
-    <div className="max-w-[400px] h-[280px] flex-grow flex flex-col justify-start items-center">
+    <div className="max-w-[400px] h-[280px] flex-grow flex flex-col justify-start items-center text-lg">
       <ul className="w-full flex flex-col justify-start items-start">
         <li className="w-full flex justify-between items-center mb-1">
           <p className="body-text pr-4">Monday:</p>

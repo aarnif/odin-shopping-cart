@@ -16,7 +16,7 @@ const Signature = () => {
         <a href="https://github.com/aarnif" target="_blank" rel="noreferrer">
           <FontAwesomeIcon
             icon={faGithub}
-            style={{ color: "black" }}
+            className="fill-current text-white"
             size={"xl"}
           />
         </a>

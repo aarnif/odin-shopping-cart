@@ -4,7 +4,7 @@ import OpeningHours from "./OpeningHours";
 
 const Footer = () => {
   return (
-    <footer className="w-full flex justify-center items-center pb-4">
+    <footer className="w-full flex justify-center items-center pt-12 pb-4 bg-slate-900 text-white">
       <div className="w-full flex flex-col justify-center items-center">
         <div className="w-full flex justify-center items-center">
           <div className="max-w-[1600px] flex-grow flex justify-around items-start">
