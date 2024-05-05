@@ -61,6 +61,7 @@ const ArtGrid = ({
 
   return (
     <>
+      <h1 className="w-full flex-grow text-2xl text-center mb-12">Art Works</h1>
       <div className="w-full flex-grow flex flex-col justify-center items-center">
         {artRows.map((row, index) => (
           <ArtGridRow

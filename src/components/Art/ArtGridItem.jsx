@@ -26,7 +26,7 @@ const ArtGridItem = forwardRef(({ artPiece, index, setArtItemIndex }, ref) => {
       onClick={handleClick}
     >
       {hovered ? (
-        <div className="relative w-full h-full flex flex-col justify-center items-center bg-slate-900 bg-opacity-30 text-slate-200">
+        <div className="relative w-full h-full flex flex-col justify-center items-center bg-slate-900 bg-opacity-30 text-slate-200 text-xl">
           <div>{artPiece.title}</div>
           <div>Click to expand</div>
         </div>

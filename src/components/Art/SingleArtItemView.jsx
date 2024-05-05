@@ -1,33 +1,57 @@
 import { forwardRef, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
+import Icon from "@mdi/react";
+import { mdiChevronLeft, mdiChevronRight } from "@mdi/js";
+import { AnimatePresence, motion } from "framer-motion";
 
 const SingleArtImageView = ({
+  artTitle,
   handleMoveToPreviousImage,
   handleMoveToNextImage,
 }) => {
   const [hovered, setHovered] = useState(false);
   return (
-    <div className="h-full flex-grow basis-2/3">
-      <div
-        className="h-full w-full bg-slate-400 flex justify-center items-center"
-        onMouseOver={() => setHovered(true)}
-        onMouseOut={() => setHovered(false)}
-      >
-        {hovered && (
-          <div className="flex-grow flex justify-center items-center">
-            <ul className="flex-grow flex justify-between items-center px-8">
-              <li>
-                <button onClick={handleMoveToPreviousImage}>Previous</button>
-              </li>
-              <li>Image</li>
-              <li>
-                <button onClick={handleMoveToNextImage}>Next</button>
-              </li>
-            </ul>
-          </div>
-        )}
+    <AnimatePresence>
+      <div className="h-full flex-grow basis-2/3 overflow-hidden">
+        <div className="h-full w-full bg-slate-900 flex justify-center items-center">
+          <motion.div
+            key={artTitle}
+            className="h-full w-full bg-slate-400 flex justify-center items-center"
+            onMouseOver={() => setHovered(true)}
+            onMouseOut={() => setHovered(false)}
+            initial={{ x: 300, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            exit={{ x: -300, opacity: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            {hovered && (
+              <div className="flex-grow flex justify-center items-center">
+                <ul className="flex-grow flex justify-between items-center px-8">
+                  <li>
+                    <button onClick={handleMoveToPreviousImage}>
+                      <Icon
+                        path={mdiChevronLeft}
+                        size={3}
+                        className="fill-current text-white transition hover:text-slate-200 active:scale-95"
+                      />
+                    </button>
+                  </li>
+                  <li>
+                    <button onClick={handleMoveToNextImage}>
+                      <Icon
+                        path={mdiChevronRight}
+                        size={3}
+                        className="fill-current text-white transition hover:text-slate-200 active:scale-95"
+                      />
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            )}
+          </motion.div>
+        </div>
       </div>
-    </div>
+    </AnimatePresence>
   );
 };
 
@@ -71,16 +95,20 @@ const SingleArtItemDetails = forwardRef(
     };
 
     return (
-      <div className="h-full flex-grow basis-1/3 flex flex-col justify-between px-8">
+      <div className="h-full flex-grow basis-1/3 flex flex-col justify-between py-8 px-12">
         <div>
-          <h1 className="text-center">{art.title}</h1>
-          <h2 className="text-center">By {art.artist}</h2>
+          <h1 className="text-center text-2xl font-bold mt-20">{art.title}</h1>
+          <h2 className="text-center text-xl font-medium text-slate-700">
+            By {art.artist}
+          </h2>
         </div>
         <div>
-          <h3 className="text-center">{art.description}</h3>
+          <h3 className="text-center italic text-slate-700">
+            {art.description}
+          </h3>
         </div>
         <div>
-          <h3 className="text-center">
+          <h3 className="text-center italic text-slate-700">
             All of our prints are individually printed and hand signed by the
             artist.
           </h3>
@@ -88,13 +116,22 @@ const SingleArtItemDetails = forwardRef(
         <div>
           <form onSubmit={handleSubmit}>
             <ul>
-              <li>
-                <ul className="flex justify-around items-center">
+              <li className="flex justify-center items-center mb-6">
+                <ul className="flex-grow max-w-[400px] flex justify-between items-center">
                   <li>
-                    <label htmlFor="size">Size:</label>
+                    <label
+                      htmlFor="size"
+                      className="text-xl font-medium text-slate-700"
+                    >
+                      Size:
+                    </label>
                   </li>
                   <li>
-                    <select name="size" defaultValue={"medium"}>
+                    <select
+                      name="size"
+                      defaultValue={"medium"}
+                      className="min-w-[250px] text-center text-lg bg-white shadow-xl rounded-md px-4 py-2 text-slate-700 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-slate-500"
+                    >
                       <option value="small">
                         Small ({art.size.small.width} x {art.size.small.height}{" "}
                         inches)
@@ -112,13 +149,19 @@ const SingleArtItemDetails = forwardRef(
                 </ul>
               </li>
 
-              <li>
-                <ul className="flex justify-around items-center">
+              <li className="flex justify-center items-center mb-12">
+                <ul className="flex-grow max-w-[400px] flex justify-between items-center">
                   <li>
-                    <label htmlFor="quantity">Quantity:</label>
+                    <label
+                      htmlFor="quantity"
+                      className="text-xl font-medium text-slate-700"
+                    >
+                      Quantity:
+                    </label>
                   </li>
                   <li>
                     <input
+                      className="max-w-[100px] text-center text-xl font-medium bg-white shadow-xl rounded-md px-4 py-2 text-slate-700 font-medium hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-slate-500"
                       type="number"
                       id="quantity"
                       name="quantity"
@@ -130,14 +173,20 @@ const SingleArtItemDetails = forwardRef(
               </li>
 
               <li>
-                <ul className="flex justify-around items-center">
-                  <li>
-                    <button type="button" onClick={closeDialog}>
-                      Cancel
+                <ul className="w-full my-4 flex flex-col items-center">
+                  <li className="w-full flex justify-center items-center">
+                    <button type="submit" className="confirm-button">
+                      Add to cart
                     </button>
                   </li>
-                  <li>
-                    <button type="submit">Add to cart</button>
+                  <li className="w-full flex justify-center items-center">
+                    <button
+                      type="button"
+                      className="cancel-button"
+                      onClick={closeDialog}
+                    >
+                      Cancel
+                    </button>
                   </li>
                 </ul>
               </li>
@@ -166,6 +215,7 @@ const SingleArtItemView = forwardRef(
       <dialog id="single-art-item-modal" ref={ref}>
         <div className="w-full flex justify-between items-center p-12">
           <SingleArtImageView
+            artTitle={art.title}
             handleMoveToPreviousImage={handleMoveToPreviousImage}
             handleMoveToNextImage={handleMoveToNextImage}
           />
