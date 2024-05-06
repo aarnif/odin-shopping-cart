@@ -5,7 +5,7 @@ const Home = () => {
   return (
     <>
       <Hero />
-      <div className="w-full flex-grow max-w-[1600px] my-24 flex flex-col">
+      <div className="w-full flex-grow max-w-[2000px] my-24 flex flex-col">
         <Section
           isEven={true}
           header="Our Story"

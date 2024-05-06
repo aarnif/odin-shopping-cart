@@ -5,8 +5,8 @@ export default {
     extend: {
       fontFamily: {
         title: ["Caribbean Tool", "sans-serif"],
-        nav: ["Berold Regular", "sans-serif"],
-        body: ["Roboto", "sans-serif"],
+        nav: ["Merienda", "sans-serif"],
+        body: ["Merienda", "sans-serif"],
       },
     },
   },
