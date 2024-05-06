@@ -8,12 +8,12 @@ const Contact = () => {
     <>
       <Hero />
       <div className="w-full flex-grow max-w-[1600px] my-24 flex flex-col">
-        <h1 className="text-center">Contact</h1>
+        <h1 className="mb-20 text-center text-2xl font-bold">Contact</h1>
         <div className="flex flex-grow max-w-[1600px]">
           <div className="flex-grow">
-            <h1>Address</h1>
-            <ContactInfo />
-            <h1>Opening Hours</h1>
+            <h1 className="mb-8 text-xl font-semibold">Contact Info</h1>
+            <ContactInfo isFooter={false} />
+            <h1 className="mb-8 text-xl font-semibold">Opening Hours</h1>
             <OpeningHours />
           </div>
           <div className="flex-grow">

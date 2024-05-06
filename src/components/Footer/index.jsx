@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="w-full flex flex-col justify-center items-center">
         <div className="w-full flex justify-center items-center">
           <div className="max-w-[1600px] flex-grow flex justify-around items-start">
-            <ContactInfo />
+            <ContactInfo isFooter={true} />
             <OpeningHours />
           </div>
         </div>
