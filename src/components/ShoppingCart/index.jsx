@@ -1,6 +1,9 @@
 import utils from "../../utils";
 import Hero from "../Hero";
-import { useState } from "react";
+import { useRef, useState } from "react";
+import Icon from "@mdi/react";
+import { mdiPlusThick, mdiMinusThick, mdiArrowRightThick } from "@mdi/js";
+import { motion, AnimatePresence } from "framer-motion";
 
 const ShoppingCartHeaderRow = () => {
   return (
@@ -57,15 +60,27 @@ const ShoppingCartItem = ({ item, setShoppingCart, setTotalSumOfItems }) => {
         {item.chosenSize} ({item.size[item.chosenSize].width} x{" "}
         {item.size[item.chosenSize].height} inches)
       </td>
-      <td className="text-center">{item.price}</td>
+      <td className="text-center">{item.price} $</td>
       <td className="text-center">
-        <div className="flex justify-around items-center">
-          <button onClick={handleIncreaseQuantity}>+</button>
-          <div>{quantity}</div>
-          <button onClick={handleDecreaseQuantity}>-</button>
+        <div className="flex justify-center items-center">
+          <button
+            onClick={handleIncreaseQuantity}
+            className="w-[40px] h-[40px] flex justify-center items-center border-2 border-slate-700 bg-white hover:bg-slate-200 active:scale-95 transition"
+          >
+            <Icon path={mdiPlusThick} size={1} />
+          </button>
+          <div className="w-[60px] h-[40px] flex justify-center items-center border-2 border-slate-700 bg-white text-2xl font-bold">
+            {quantity}
+          </div>
+          <button
+            className="w-[40px] h-[40px] flex justify-center items-center border-2 border-slate-700 bg-white hover:bg-slate-200 active:scale-95 transition"
+            onClick={handleDecreaseQuantity}
+          >
+            <Icon path={mdiMinusThick} size={1} />
+          </button>
         </div>
       </td>
-      <td className="text-center">{item.price * quantity} $</td>
+      <td className="w-[100px] text-center">{item.price * quantity} $</td>
     </tr>
   );
 };
@@ -77,13 +92,13 @@ const ShoppingCartItems = ({
 }) => {
   return (
     <>
-      <h1 className="text-center">Shopping Cart</h1>
+      <h1 className="mb-12 text-2xl font-bold text-center">Shopping Cart</h1>
       {!shoppingCart.length ? (
         <div className="flex-grow text-center mt-8">
           Your shopping cart is empty.
         </div>
       ) : (
-        <table>
+        <table className="text-xl">
           <ShoppingCartHeaderRow />
           <tbody>
             {shoppingCart.map((item, index) => (
@@ -102,9 +117,21 @@ const ShoppingCartItems = ({
 };
 
 const ShoppingCart = ({ shoppingCart, setShoppingCart }) => {
+  const proceedToCheckoutModalRef = useRef(null);
   const [totalSumOfItems, setTotalSumOfItems] = useState(
     shoppingCart.reduce((sum, item) => sum + item.price * item.quantity, 0)
   );
+
+  const buttonTextVariants = {
+    initial: { x: 20 },
+    hover: { x: 0 },
+  };
+
+  const buttonIconVariants = {
+    initial: { x: -10, opacity: 0 },
+    hover: { x: 0, opacity: 1 },
+  };
+
   return (
     <>
       <Hero />
@@ -115,12 +142,53 @@ const ShoppingCart = ({ shoppingCart, setShoppingCart }) => {
           setTotalSumOfItems={setTotalSumOfItems}
         />
         <div className="flex justify-end">
-          <div className="flex flex-col justify-around">
-            <div>Total {totalSumOfItems} $</div>
-            <button>Proceed To Checkout</button>
+          <div className="flex flex-col justify-around text-3xl font-bold">
+            <div className="min-w-[300px] mb-8 flex justify-around items-center">
+              <div>Total:</div>
+              <div>{totalSumOfItems} $</div>
+            </div>
+            <AnimatePresence>
+              <motion.button
+                initial="initial"
+                whileHover="hover"
+                className="confirm-button flex justify-center items-center bg-green-500 hover:bg-green-400"
+                onClick={() => proceedToCheckoutModalRef.current.showModal()}
+              >
+                <motion.div
+                  transition={{ duration: 0.5, type: "tween" }}
+                  variants={buttonTextVariants}
+                >
+                  Proceed To Checkout
+                </motion.div>
+
+                <motion.div
+                  key="arrow-right"
+                  className="ml-2"
+                  transition={{ duration: 0.5, type: "tween" }}
+                  variants={buttonIconVariants}
+                >
+                  <Icon path={mdiArrowRightThick} size={1.2} />
+                </motion.div>
+              </motion.button>
+            </AnimatePresence>
           </div>
         </div>
       </div>
+      <dialog ref={proceedToCheckoutModalRef}>
+        <div className="w-[500px] h-[280px] bg-white flex flex-col justify-center items-center">
+          <h1 className="text-2xl font-bold mb-12">
+            Checkout Not Implemented!
+          </h1>
+          <div className="flex justify-around w-full">
+            <button
+              className="confirm-button"
+              onClick={() => proceedToCheckoutModalRef.current.close()}
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </dialog>
     </>
   );
 };
