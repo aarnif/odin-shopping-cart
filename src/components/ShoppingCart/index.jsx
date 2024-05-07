@@ -94,7 +94,7 @@ const ShoppingCartItems = ({
     <>
       <h1 className="mb-12 text-2xl font-bold text-center">Shopping Cart</h1>
       {!shoppingCart.length ? (
-        <div className="flex-grow text-center mt-8">
+        <div className="flex-grow mt-8 text-center text-xl">
           Your shopping cart is empty.
         </div>
       ) : (

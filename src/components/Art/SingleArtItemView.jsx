@@ -10,6 +10,18 @@ const SingleArtImageView = ({
   handleMoveToNextImage,
 }) => {
   const [hovered, setHovered] = useState(false);
+  const [slideDirection, setSlideDirection] = useState("right");
+
+  const handleChangeImageToPrevious = () => {
+    setSlideDirection("left");
+    handleMoveToPreviousImage();
+  };
+
+  const handleChangeImageToNext = () => {
+    setSlideDirection("right");
+    handleMoveToNextImage();
+  };
+
   return (
     <AnimatePresence>
       <div className="h-full flex-grow basis-2/3 overflow-hidden">
@@ -19,16 +31,16 @@ const SingleArtImageView = ({
             className="h-full w-full bg-slate-400 flex justify-center items-center"
             onMouseOver={() => setHovered(true)}
             onMouseOut={() => setHovered(false)}
-            initial={{ x: 300, opacity: 0 }}
+            initial={{ x: slideDirection === "right" ? 300 : -300, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
-            exit={{ x: -300, opacity: 0 }}
+            exit={{ x: slideDirection === "right" ? -300 : 300, opacity: 0 }}
             transition={{ duration: 0.5 }}
           >
             {hovered && (
               <div className="flex-grow flex justify-center items-center">
                 <ul className="flex-grow flex justify-between items-center px-8">
                   <li>
-                    <button onClick={handleMoveToPreviousImage}>
+                    <button onClick={handleChangeImageToPrevious}>
                       <Icon
                         path={mdiChevronLeft}
                         size={3}
@@ -37,7 +49,7 @@ const SingleArtImageView = ({
                     </button>
                   </li>
                   <li>
-                    <button onClick={handleMoveToNextImage}>
+                    <button onClick={handleChangeImageToNext}>
                       <Icon
                         path={mdiChevronRight}
                         size={3}

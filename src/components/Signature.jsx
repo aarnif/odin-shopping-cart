@@ -11,6 +11,7 @@ const Signature = () => {
           scale: 1.5,
           rotate: 360,
         }}
+        whileTap={{ scale: 1.4 }}
         transition={{ duration: 0.5 }}
       >
         <a href="https://github.com/aarnif" target="_blank" rel="noreferrer">
