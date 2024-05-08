@@ -1,5 +1,6 @@
 import LinkItem from "./LinkItem";
 import ShoppingCartItem from "./ShoppingCartItem";
+import ToggleDarkModeIcon from "./ToggleDarkModeIcon";
 import { useScroll, useMotionValueEvent, motion } from "framer-motion";
 import { useState } from "react";
 
@@ -41,7 +42,7 @@ const Header = ({ shoppingCart }) => {
 
   return (
     <motion.header
-      className="fixed w-full flex justify-center items-center shadow-lg z-10 bg-white"
+      className="fixed w-full flex justify-center items-center shadow-lg z-10 bg-white dark:bg-slate-900 transition"
       style={{
         height: headerHeightInPixels,
         translateY: showHeader,
@@ -55,7 +56,10 @@ const Header = ({ shoppingCart }) => {
           <LinkItem to={"/"} itemName={"Home"} />
           <LinkItem to={"/art"} itemName={"Art"} />
           <LinkItem to={"/contact"} itemName={"Contact"} />
-          <ShoppingCartItem shoppingCartItemCount={shoppingCartItemCount} />
+          <ul className="flex justify-between items-center">
+            <ShoppingCartItem shoppingCartItemCount={shoppingCartItemCount} />
+            <ToggleDarkModeIcon />
+          </ul>
         </ul>
       </nav>
     </motion.header>

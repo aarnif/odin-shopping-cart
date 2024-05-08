@@ -56,7 +56,7 @@ const LatestShoppingCartItemView = ({
         >
           <motion.div
             key={"latestShoppingCartItem"}
-            className="fixed top-0 bottom-0 right-0 h-screen w-full max-w-[500px] min-w-[300px] flex flex-col justify-start items-center bg-slate-100"
+            className="fixed top-0 bottom-0 right-0 h-screen w-full max-w-[500px] min-w-[300px] flex flex-col justify-start items-center bg-slate-100 dark:bg-slate-800"
             initial={{ x: 1000, opacity: 0 }}
             animate={{ x: 0, opacity: 1, duration: 0.5 }}
             transition={{ delay: 1.0, type: "tween" }}

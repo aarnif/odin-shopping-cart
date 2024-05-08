@@ -8,7 +8,7 @@ import {
 const SocialMediaLinks = ({ isFooter }) => {
   const classStyles = isFooter
     ? "fill-current text-white transition group-hover:text-slate-900"
-    : "fill-current text-slate-900 transition group-hover:text-white";
+    : "fill-current text-slate-900 transition group-hover:text-white dark:text-white dark:group-hover:text-slate-900";
   return (
     <ul id="social-media-icons" className="flex justify-center items-center">
       <li className="group h-12 w-12 mr-2 flex justify-center items-center rounded-full cursor-pointer transition hover:bg-slate-700 active:scale-95">

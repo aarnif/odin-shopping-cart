@@ -65,15 +65,17 @@ const ShoppingCartItem = ({ item, setShoppingCart, setTotalSumOfItems }) => {
         <div className="flex justify-center items-center">
           <button
             onClick={handleIncreaseQuantity}
-            className="w-[40px] h-[40px] flex justify-center items-center border-2 border-slate-700 bg-white hover:bg-slate-200 active:scale-95 transition"
+            className="w-[40px] h-[40px] flex justify-center items-center border-2 border-slate-700 bg-white
+            hover:bg-slate-200 active:scale-95 transition dark:bg-slate-600 dark:hover:bg-slate-700"
           >
             <Icon path={mdiPlusThick} size={1} />
           </button>
-          <div className="w-[60px] h-[40px] flex justify-center items-center border-2 border-slate-700 bg-white text-2xl font-bold">
+          <div className="w-[60px] h-[40px] flex justify-center items-center border-2 border-slate-700 bg-white text-2xl font-bold dark:bg-slate-600">
             {quantity}
           </div>
           <button
-            className="w-[40px] h-[40px] flex justify-center items-center border-2 border-slate-700 bg-white hover:bg-slate-200 active:scale-95 transition"
+            className="w-[40px] h-[40px] flex justify-center items-center border-2 border-slate-700 bg-white
+            hover:bg-slate-200 active:scale-95 transition dark:bg-slate-600 dark:hover:bg-slate-700"
             onClick={handleDecreaseQuantity}
           >
             <Icon path={mdiMinusThick} size={1} />
@@ -175,7 +177,7 @@ const ShoppingCart = ({ shoppingCart, setShoppingCart }) => {
         </div>
       </div>
       <dialog ref={proceedToCheckoutModalRef}>
-        <div className="w-[500px] h-[280px] bg-white flex flex-col justify-center items-center">
+        <div className="w-[500px] h-[280px] bg-white flex flex-col justify-center items-center dark:bg-slate-700 dark:text-slate-300">
           <h1 className="text-2xl font-bold mb-12">
             Checkout Not Implemented!
           </h1>
