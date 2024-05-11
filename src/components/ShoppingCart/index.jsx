@@ -22,11 +22,9 @@ const ShoppingCartHeaderRow = () => {
 
 const ShoppingCartItem = ({ item, setShoppingCart, setTotalSumOfItems }) => {
   console.log("Shopping cart item:", item);
-  const aspectRatio = utils.calculateAspectRatio(
-    item.size[item.chosenSize].width,
-    item.size[item.chosenSize].height
-  );
   const [quantity, setQuantity] = useState(Number(item.quantity));
+
+  const [artWidth, artHeight] = item.aspectRatio.split(":");
 
   const handleIncreaseQuantity = () => {
     setQuantity(quantity + 1);
@@ -52,7 +50,14 @@ const ShoppingCartItem = ({ item, setShoppingCart, setTotalSumOfItems }) => {
       <td className="w-[500px] flex justify-center items-center my-8">
         <div
           className="bg-slate-400"
-          style={{ height: 150, width: 150 * aspectRatio }}
+          style={{
+            width: Number(artWidth) * 10,
+            height: Number(artHeight) * 10,
+            backgroundImage: `url(${item.imageURL})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
         ></div>
       </td>
       <td className="text-center">{item.title}</td>

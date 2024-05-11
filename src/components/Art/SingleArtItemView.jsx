@@ -6,6 +6,7 @@ import { AnimatePresence, motion } from "framer-motion";
 
 const SingleArtImageView = ({
   artTitle,
+  artImageURL,
   handleMoveToPreviousImage,
   handleMoveToNextImage,
 }) => {
@@ -28,7 +29,13 @@ const SingleArtImageView = ({
         <div className="h-full w-full bg-slate-900 flex justify-center items-center">
           <motion.div
             key={artTitle}
-            className="h-full w-full bg-slate-400 flex justify-center items-center"
+            style={{
+              backgroundImage: `url(${artImageURL})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+            }}
+            className="h-full w-full flex justify-center items-center"
             onMouseOver={() => setHovered(true)}
             onMouseOut={() => setHovered(false)}
             initial={{ x: slideDirection === "right" ? 300 : -300, opacity: 0 }}
@@ -145,7 +152,7 @@ const SingleArtItemDetails = forwardRef(
                       name="size"
                       defaultValue={"medium"}
                       className="min-w-[250px] text-center text-lg bg-white shadow-xl rounded-md px-4 py-2 text-slate-700 border border-slate-400 
-                      focus:outline-none focus:ring-1 focus:ring-blue-500 focus:bg-slate-100 placeholder:text-slate-500
+                      hover:bg-slate-100 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:bg-slate-100 placeholder:text-slate-500
                       dark:text-slate-300 dark:placeholder:text-slate-300 dark:bg-slate-600 dark:hover:bg-slate-500 dark:focus:bg-slate-500"
                     >
                       <option value="small">
@@ -235,6 +242,7 @@ const SingleArtItemView = forwardRef(
         <div className="w-full flex justify-between items-center p-12 dark:bg-slate-700">
           <SingleArtImageView
             artTitle={art.title}
+            artImageURL={art.imageURL}
             handleMoveToPreviousImage={handleMoveToPreviousImage}
             handleMoveToNextImage={handleMoveToNextImage}
           />

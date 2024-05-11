@@ -4,23 +4,22 @@ import Icon from "@mdi/react";
 import { mdiCheck } from "@mdi/js";
 
 const AddItemContent = ({ latestShoppingCartItem }) => {
-  const style = {
-    width: `${latestShoppingCartItem.widthInPixels}px`,
-    backgroundImage: `url(${latestShoppingCartItem.ImageUrl})`,
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-    backgroundRepeat: "no-repeat",
-  };
-
+  console.log("Latest shopping cart item: ", latestShoppingCartItem);
+  const [artWidth, artHeight] = latestShoppingCartItem.aspectRatio.split(":");
   return (
     <div className="flex-grow">
       <div className="flex-grow flex flex-col">
         <div
-          className="flex-grow min-h-[300px] max-w-[400px] mb-4 bg-slate-500 mx-1 flex justify-center items-center"
-          style={style}
-        >
-          Image
-        </div>
+          className="flex-grow mb-4 bg-slate-500 mx-1 flex justify-center items-center"
+          style={{
+            width: Number(artWidth) * 10,
+            height: Number(artHeight) * 10,
+            backgroundImage: `url(${latestShoppingCartItem.imageURL})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
+        ></div>
         <h1 className="flex-grow mb-4 text-2xl">
           {latestShoppingCartItem.title}
         </h1>

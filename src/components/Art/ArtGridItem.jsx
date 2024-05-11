@@ -7,14 +7,6 @@ const ArtGridItem = forwardRef(({ artPiece, index, setArtItemIndex }, ref) => {
     ref.current.showModal();
   };
 
-  const style = {
-    width: `${artPiece.widthInPixels}px`,
-    backgroundImage: `url(${artPiece.ImageUrl})`,
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-    backgroundRepeat: "no-repeat",
-  };
-
   const variants = {
     hidden: { opacity: 0 },
     hover: { opacity: 1 },
@@ -24,7 +16,12 @@ const ArtGridItem = forwardRef(({ artPiece, index, setArtItemIndex }, ref) => {
     <AnimatePresence>
       <motion.div
         className="h-full flex-grow bg-slate-300 mx-1 flex justify-center items-center cursor-pointer"
-        style={style}
+        style={{
+          backgroundImage: `url(${artPiece.imageURL})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
         initial="hidden"
         whileHover="hover"
         onClick={handleClick}
