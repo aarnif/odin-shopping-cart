@@ -12,7 +12,7 @@ const ToggleDarkModeIcon = () => {
     document.body.classList.toggle("dark");
   };
 
-  const iconSize = 1.5;
+  const iconSize = 1.4;
 
   return (
     <li className="flex min-w-[80px]">
