@@ -25,12 +25,6 @@
   dialog::backdrop {
     @apply bg-black bg-opacity-70;
   }
-  #single-art-item-modal[open] {
-    @apply w-[90vw] h-[80vh] flex justify-center bg-slate-200 dark:bg-slate-800;
-  }
-  #form-submit-modal[open] {
-    @apply w-[400px] h-[200px] flex flex-col items-center justify-center;
-  }
   .confirm-button {
     @apply w-full flex-grow max-w-[400px] bg-slate-900 py-4 m-2 rounded-lg shadow-xl text-slate-100 text-xl font-bold
     hover:underline hover:bg-slate-800 active:scale-95 transition;

@@ -25,13 +25,13 @@ const SingleArtImageView = ({
 
   return (
     <AnimatePresence>
-      <div className="h-full flex-grow basis-2/3 overflow-hidden">
+      <div className="h-full flex-grow basis-3/4 overflow-hidden">
         <div className="h-full w-full bg-slate-900 flex justify-center items-center">
           <motion.div
             key={artTitle}
             style={{
               backgroundImage: `url(${artImageURL})`,
-              backgroundSize: "cover",
+              backgroundSize: "contain",
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
             }}
@@ -114,7 +114,7 @@ const SingleArtItemDetails = forwardRef(
     };
 
     return (
-      <div className="h-full flex-grow basis-1/3 flex flex-col justify-between py-8 px-12">
+      <div className="h-full flex-grow basis-1/4 flex flex-col justify-between py-8 px-12">
         <div>
           <h1 className="text-center text-2xl font-bold mt-20 dark:text-white">
             {art.title}
@@ -238,21 +238,23 @@ const SingleArtItemView = forwardRef(
     ref
   ) => {
     return (
-      <dialog id="single-art-item-modal" ref={ref}>
-        <div className="w-full flex justify-between items-center p-12 dark:bg-slate-700">
-          <SingleArtImageView
-            artTitle={art.title}
-            artImageURL={art.imageURL}
-            handleMoveToPreviousImage={handleMoveToPreviousImage}
-            handleMoveToNextImage={handleMoveToNextImage}
-          />
-          <SingleArtItemDetails
-            ref={ref}
-            art={art}
-            shoppingCart={shoppingCart}
-            setShoppingCart={setShoppingCart}
-            setLatestShoppingCartItem={setLatestShoppingCartItem}
-          />
+      <dialog ref={ref}>
+        <div className="w-[90vw] h-[90vh] flex justify-center bg-slate-200 dark:bg-slate-800">
+          <div className="w-full flex justify-between items-center p-12 dark:bg-slate-700">
+            <SingleArtImageView
+              artTitle={art.title}
+              artImageURL={art.imageURL}
+              handleMoveToPreviousImage={handleMoveToPreviousImage}
+              handleMoveToNextImage={handleMoveToNextImage}
+            />
+            <SingleArtItemDetails
+              ref={ref}
+              art={art}
+              shoppingCart={shoppingCart}
+              setShoppingCart={setShoppingCart}
+              setLatestShoppingCartItem={setLatestShoppingCartItem}
+            />
+          </div>
         </div>
       </dialog>
     );

@@ -114,15 +114,19 @@ const ContactForm = () => {
           </button>
         </div>
       </form>
-      <dialog ref={formSubmitModalRef} id="form-submit-modal">
-        <h1>Thank you for your message!</h1>
-        <h2>(Which did not go anywhere.)</h2>
-        <button
-          onClick={() => formSubmitModalRef.current.close()}
-          className="confirm-button"
-        >
-          Close
-        </button>
+      <dialog ref={formSubmitModalRef}>
+        <div className="w-[500px] h-[260px] bg-white flex flex-col justify-center items-center dark:bg-slate-700 dark:text-slate-300">
+          <h1 className="text-2xl font-bold">Thank you for your message!</h1>
+          <h2 className="mb-8 text-lg">(Which did not go anywhere.)</h2>
+          <div className="flex justify-around w-full">
+            <button
+              className="confirm-button"
+              onClick={() => formSubmitModalRef.current.close()}
+            >
+              Close
+            </button>
+          </div>
+        </div>
       </dialog>
     </>
   );
