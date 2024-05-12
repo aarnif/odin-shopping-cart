@@ -2,6 +2,9 @@ import { useState, forwardRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const ArtGridItem = forwardRef(({ artPiece, index, setArtItemIndex }, ref) => {
+  const [artWidth, artHeight] = artPiece.aspectRatio.split(":");
+  const aspectRatio = artWidth / artHeight;
+  const itemHeight = 350;
   const handleClick = () => {
     setArtItemIndex(index);
     ref.current.showModal();
@@ -15,21 +18,30 @@ const ArtGridItem = forwardRef(({ artPiece, index, setArtItemIndex }, ref) => {
   return (
     <AnimatePresence>
       <motion.div
-        className="h-full flex-grow bg-slate-300 mx-1 flex justify-center items-center cursor-pointer"
+        className="flex-grow m-1 flex justify-center items-center bg-slate-300 cursor-pointer"
         style={{
+          width: aspectRatio * itemHeight,
+          height: itemHeight,
           backgroundImage: `url(${artPiece.imageURL})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
+          opacity: 0,
         }}
         initial="hidden"
         whileHover="hover"
+        whileInView={{ opacity: 1 }}
+        transition={{
+          duration: 1,
+          delay: 0.7,
+        }}
+        viewport={{ once: true }}
         onClick={handleClick}
       >
         <motion.div
           variants={variants}
           transition={{ duration: 0.3 }}
-          className="relative w-full h-full flex flex-col justify-center items-center bg-slate-900 bg-opacity-30 text-slate-200 text-xl"
+          className="relative w-full h-full flex flex-col justify-center items-center bg-slate-900 bg-opacity-50 text-slate-200 text-xl"
         >
           <div>{artPiece.title}</div>
           <div>Click to expand</div>

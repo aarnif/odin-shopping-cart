@@ -31,7 +31,7 @@ const Art = ({ shoppingCart, setShoppingCart, setLatestShoppingCartItem }) => {
   return (
     <>
       <Hero />
-      <div className="w-full flex-grow max-w-[1600px] my-24 flex flex-col">
+      <div className="w-full flex-grow max-w-[1600px] my-24 px-12 flex flex-col">
         {content}
       </div>
     </>

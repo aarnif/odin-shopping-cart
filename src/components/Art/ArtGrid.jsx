@@ -1,5 +1,4 @@
-import utils from "../../utils";
-import ArtGridRow from "./ArtGridRow";
+import ArtGridItem from "./ArtGridItem";
 import SingleArtItemView from "./SingleArtItemView";
 import { useState, useRef } from "react";
 
@@ -11,10 +10,6 @@ const ArtGrid = ({
 }) => {
   const singleArtViewRef = useRef(null);
   const [artItemIndex, setArtItemIndex] = useState(0);
-  const artRows = [];
-  const gridRowWidthInPixels = 1600;
-  const gridRowHeightInPixels = 400;
-  let index = 0;
 
   const handleMoveToPreviousImage = () => {
     console.log("Previous image clicked");
@@ -34,40 +29,16 @@ const ArtGrid = ({
     console.log("Next image:", art[newIndexValue].title);
   };
 
-  while (index < art.length) {
-    let artRow = [];
-    let artRowWidth = 0;
-
-    while (artRowWidth < gridRowWidthInPixels && index < art.length) {
-      const aspectRatio = utils.calculateAspectRatio(
-        art[index].size.small.width,
-        art[index].size.small.height
-      );
-      const artWidth = gridRowHeightInPixels * aspectRatio;
-
-      art[index].widthInPixels = Math.round(artWidth);
-
-      if (artRowWidth + artWidth <= gridRowWidthInPixels) {
-        artRow.push(art[index]);
-        artRowWidth += artWidth;
-        index++;
-      } else {
-        break;
-      }
-    }
-
-    artRows.push(artRow);
-  }
-
   return (
     <>
       <h1 className="w-full flex-grow text-2xl text-center mb-12">Art Works</h1>
-      <div className="w-full flex-grow flex flex-col justify-center items-center">
-        {artRows.map((row, index) => (
-          <ArtGridRow
+      <div className="w-full flex flex-wrap justify-center items-center">
+        {art.map((artPiece, index) => (
+          <ArtGridItem
             ref={singleArtViewRef}
             key={index}
-            art={row}
+            artPiece={artPiece}
+            index={index}
             setArtItemIndex={setArtItemIndex}
           />
         ))}
