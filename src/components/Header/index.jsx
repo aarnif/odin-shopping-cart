@@ -4,7 +4,7 @@ import ToggleDarkModeIcon from "./ToggleDarkModeIcon";
 import { useScroll, useMotionValueEvent, motion } from "framer-motion";
 import { useState } from "react";
 
-const Header = ({ shoppingCart }) => {
+const Header = ({ shoppingCart, handleChangeHeroImage }) => {
   const { scrollY, scrollYProgress } = useScroll();
   const [showHeader, setShowHeader] = useState(0);
   const headerHeightInPixels = 80;
@@ -50,14 +50,29 @@ const Header = ({ shoppingCart }) => {
     >
       <nav className="flex-grow flex justify-between items-center">
         <h1 className="flex-grow text-center font-title text-4xl">
-          FANTASY ART
+          LANDSCAPE ART
         </h1>
         <ul className="max-w-[1000px] flex-grow flex justify-around items-center text-xl font-nav font-extrabold">
-          <LinkItem to={"/"} itemName={"Home"} />
-          <LinkItem to={"/art"} itemName={"Art"} />
-          <LinkItem to={"/contact"} itemName={"Contact"} />
+          <LinkItem
+            to={"/"}
+            itemName={"Home"}
+            handleChangeHeroImage={handleChangeHeroImage}
+          />
+          <LinkItem
+            to={"/art"}
+            itemName={"Art"}
+            handleChangeHeroImage={handleChangeHeroImage}
+          />
+          <LinkItem
+            to={"/contact"}
+            itemName={"Contact"}
+            handleChangeHeroImage={handleChangeHeroImage}
+          />
           <ul className="flex justify-between items-center">
-            <ShoppingCartItem shoppingCartItemCount={shoppingCartItemCount} />
+            <ShoppingCartItem
+              shoppingCartItemCount={shoppingCartItemCount}
+              handleChangeHeroImage={handleChangeHeroImage}
+            />
             <ToggleDarkModeIcon />
           </ul>
         </ul>

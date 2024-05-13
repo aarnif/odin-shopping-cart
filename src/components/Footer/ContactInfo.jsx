@@ -5,7 +5,7 @@ const ContactInfo = ({ isFooter }) => {
     <div className="max-w-[400px] h-[280px] flex-grow flex flex-col justify-start items-center text-lg">
       <ul className="w-full flex flex-col justify-start items-start">
         <li className="w-full flex justify-between items-center mb-1">
-          <p className="body-text pr-4">Fantasy Art Gallery</p>
+          <p className="body-text pr-4">Landscape Art</p>
         </li>
         <li className="w-full flex justify-between items-center mb-1">
           <p className="body-text pr-4">235 Bowery</p>

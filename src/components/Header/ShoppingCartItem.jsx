@@ -4,13 +4,14 @@ import Icon from "@mdi/react";
 import { mdiCartOutline } from "@mdi/js";
 import { motion } from "framer-motion";
 
-const ShoppingCartItem = ({ shoppingCartItemCount }) => {
+const ShoppingCartItem = ({ shoppingCartItemCount, handleChangeHeroImage }) => {
   return (
     <li className="flex min-w-[80px]">
       <Link to={"/shopping_cart"}>
         <button
           className="p-1 rounded-full border-2 border-white hover:border-green-600 active:scale-95 transition
         dark:border-slate-900"
+          onClick={handleChangeHeroImage}
         >
           <Icon path={mdiCartOutline} size={1.4} />
         </button>

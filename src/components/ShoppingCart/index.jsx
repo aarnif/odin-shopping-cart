@@ -1,5 +1,3 @@
-import utils from "../../utils";
-import Hero from "../Hero";
 import { useRef, useState } from "react";
 import Icon from "@mdi/react";
 import { mdiPlusThick, mdiMinusThick, mdiArrowRightThick } from "@mdi/js";
@@ -141,7 +139,6 @@ const ShoppingCart = ({ shoppingCart, setShoppingCart }) => {
 
   return (
     <>
-      <Hero />
       <div className="w-full flex-grow max-w-[1600px] my-24 flex flex-col">
         <ShoppingCartItems
           shoppingCart={shoppingCart}

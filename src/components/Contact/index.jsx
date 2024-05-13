@@ -6,7 +6,6 @@ import ContactForm from "./ContactForm";
 const Contact = () => {
   return (
     <>
-      <Hero />
       <div className="w-full flex-grow max-w-[1600px] my-24 flex flex-col">
         <h1 className="mb-20 text-center text-2xl font-bold">Contact</h1>
         <div className="flex flex-grow max-w-[1600px]">
@@ -23,7 +22,7 @@ const Contact = () => {
               loading="lazy"
             ></iframe>
             <div className="relative w-full z-10 bottom-1/2 text-center text-2xl font-extrabold text-red-600">
-              This Gallery Does not exist!
+              This Shop Does not exist!
             </div>
           </div>
         </div>
