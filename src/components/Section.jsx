@@ -1,4 +1,4 @@
-const Section = ({ isEven, header, content }) => {
+const Section = ({ isEven, header, content, imageURL }) => {
   const paragraphs = content.map((paragraph, index) => (
     <div key={index} className="my-4">
       {paragraph}
@@ -13,9 +13,15 @@ const Section = ({ isEven, header, content }) => {
   );
 
   const sectionImageElement = (
-    <div className="flex-grow basis-1/2 min-h-[600px] max-w-[1000px] flex justify-center items-center bg-slate-500">
-      Section Image
-    </div>
+    <div
+      className="flex-grow basis-1/2 min-h-[600px] max-w-[1000px] flex justify-center items-center bg-slate-500"
+      style={{
+        backgroundImage: `url(${imageURL})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    ></div>
   );
 
   if (isEven) {
