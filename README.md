@@ -1,8 +1,48 @@
-# React + Vite
+# Shopping Cart
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a shopping cart app built with Vite + React that allows you to add items to shopping cart.
+The project is part of the [The Odin Project's](https://www.theodinproject.com/) Full Stack JavaScript path.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Users can add items to shopping cart
+- Users can remove items from shopping cart
+- Users can increase or decrease the quantity of items in shopping cart
+
+## Live Preview
+
+[Shopping Cart](https://aarnif.github.io/odin-shopping-cart/)
+
+## Technologies
+
+- Vite + React
+- Tailwind CSS
+- HTML
+- ChatGPT (products and other text generations)
+- Midjourney (product images)
+
+## Images
+
+![Shopping Cart](/public/images/light-mode.png)
+Light Mode
+<br>
+![Shopping Cart](/public/images/dark-mode.png)
+Dark Mode
+
+## Instructions
+
+```
+HTTPS - git clone https://github.com/aarnif/odin-shopping-cart.git
+
+SSH - git clone git@github.com:aarnif/odin-shopping-cart.git
+
+cd odin-shopping-cart
+
+npm install
+
+npm run dev # Start the app in development mode
+
+npm run build # Build the app for production
+
+npm run preview # Start the app in production mode
+```
