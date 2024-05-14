@@ -6,7 +6,7 @@ const Section = ({ isEven, header, content, imageURL }) => {
   ));
 
   const sectionTextElement = (
-    <div className="flex-grow basis-1/2 min-h-[600px] max-w-[1000px] px-12 pt-12 flex flex-col justify-start items-center">
+    <div className="flex-grow basis-1/2 min-h-[600px] max-w-[900px] px-12 pt-12 flex flex-col justify-start items-center">
       <h2 className="text-2xl font-bold mb-8">{header}</h2>
       <div className="text-lg">{paragraphs}</div>
     </div>
@@ -14,7 +14,7 @@ const Section = ({ isEven, header, content, imageURL }) => {
 
   const sectionImageElement = (
     <div
-      className="flex-grow basis-1/2 min-h-[600px] max-w-[1000px] flex justify-center items-center bg-slate-500"
+      className="flex-grow basis-1/2 min-h-[600px] max-w-[900px] flex justify-center items-center bg-slate-500"
       style={{
         backgroundImage: `url(${imageURL})`,
         backgroundSize: "cover",

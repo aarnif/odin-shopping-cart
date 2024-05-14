@@ -3,7 +3,7 @@ import Section from "./Section";
 const Home = () => {
   return (
     <>
-      <div className="w-full flex-grow max-w-[2000px] my-24 flex flex-col">
+      <div className="w-full flex-grow max-w-[1800px] my-24 flex flex-col">
         <Section
           isEven={true}
           header="Explore Nature's Masterpieces: Landscape Art Prints for Every Space"
