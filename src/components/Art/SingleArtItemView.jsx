@@ -243,7 +243,7 @@ const SingleArtItemView = forwardRef(
           <div className="w-full flex justify-between items-center p-12 dark:bg-slate-700">
             <SingleArtImageView
               artTitle={art.title}
-              artImageURL={art.imageURL}
+              artImageURL={art.image}
               handleMoveToPreviousImage={handleMoveToPreviousImage}
               handleMoveToNextImage={handleMoveToNextImage}
             />

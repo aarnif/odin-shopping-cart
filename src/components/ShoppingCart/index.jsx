@@ -51,7 +51,7 @@ const ShoppingCartItem = ({ item, setShoppingCart, setTotalSumOfItems }) => {
           style={{
             width: Number(artWidth) * 10,
             height: Number(artHeight) * 10,
-            backgroundImage: `url(${item.imageURL})`,
+            backgroundImage: `url(${item.image})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",

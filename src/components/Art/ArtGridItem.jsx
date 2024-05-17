@@ -22,7 +22,7 @@ const ArtGridItem = forwardRef(({ artPiece, index, setArtItemIndex }, ref) => {
         style={{
           width: aspectRatio * itemHeight,
           height: itemHeight,
-          backgroundImage: `url(${artPiece.imageURL})`,
+          backgroundImage: `url(${artPiece.image})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",

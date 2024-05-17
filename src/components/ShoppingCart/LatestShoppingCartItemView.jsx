@@ -14,7 +14,7 @@ const AddItemContent = ({ latestShoppingCartItem }) => {
           style={{
             width: Number(artWidth) * 10,
             height: Number(artHeight) * 10,
-            backgroundImage: `url(${latestShoppingCartItem.imageURL})`,
+            backgroundImage: `url(${latestShoppingCartItem.image})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",

@@ -14,7 +14,7 @@ const Hero = ({ randomArtPiece }) => {
       className="w-full flex-grow h-[700px] mt-[60px] flex justify-center items-center bg-slate-500"
       style={{
         backgroundImage: randomArtPiece
-          ? `url(${randomArtPiece.imageURL})`
+          ? `url(${randomArtPiece.image})`
           : "none",
         backgroundSize: "cover",
         backgroundPosition: "center",

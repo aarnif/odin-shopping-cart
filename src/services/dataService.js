@@ -1,9 +1,9 @@
 import axios from "axios";
-const baseUrl = "http://localhost:3001";
+const baseUrl = "https://aarnif.github.io/db.json";
 
 const getAll = async () => {
-  const response = await axios.get(`${baseUrl}/art`);
-  return response.data;
+  const response = await axios.get(`${baseUrl}`);
+  return response.data.art;
 };
 
 export default { getAll };
