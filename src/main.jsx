@@ -7,7 +7,7 @@ import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <Router>
+    <Router basename={import.meta.env.DEV ? "/" : "/odin-shopping-cart/"}>
       <App />
     </Router>
   </React.StrictMode>
