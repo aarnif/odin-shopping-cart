@@ -1,3 +1,4 @@
+import LoadingIcon from "../../LoadingIcon";
 import ArtGrid from "./ArtGrid";
 
 const Art = ({
@@ -10,7 +11,7 @@ const Art = ({
 
   if (!art.length) {
     console.log("Loading art data...");
-    content = <div>Loading...</div>;
+    content = <LoadingIcon />;
   } else {
     content = (
       <ArtGrid
@@ -24,7 +25,7 @@ const Art = ({
 
   return (
     <>
-      <div className="w-full flex-grow max-w-[1600px] my-24 px-12 flex flex-col">
+      <div className="w-full flex-grow max-w-[1600px] my-24 px-12 flex flex-col justify-center items-center">
         {content}
       </div>
     </>
