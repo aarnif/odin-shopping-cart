@@ -2,7 +2,7 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
 // https://vitejs.dev/config/
-export default defineConfig(({ command }) => {
+export default defineConfig(() => {
   const config = {
     plugins: [react()],
     base: "/",
@@ -12,10 +12,6 @@ export default defineConfig(({ command }) => {
       setupFiles: "./testSetup.js",
     },
   };
-
-  if (command === "build") {
-    config.base = "/odin-shopping-cart/";
-  }
 
   return config;
 });
