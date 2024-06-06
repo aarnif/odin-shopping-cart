@@ -11,7 +11,7 @@ The project is part of the [The Odin Project's](https://www.theodinproject.com/)
 
 ## Live Preview
 
-[Shopping Cart](https://aarnif.github.io/odin-shopping-cart/)
+[Shopping Cart](https://splendid-kheer-a6bf4c.netlify.app/)
 
 ## Technologies
 
